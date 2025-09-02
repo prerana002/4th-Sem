@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Calculator</title>
+        <style>
+            #calc {
+                width: fit-content;
+                display: grid;
+                grid-template-areas:
+                    "input input input input"
+                    "reset reset clear clear";
+                gap: 0.25rem;
+                background-color: black;
+                padding: 1rem;
+                border-radius: 0.5rem;
+            }
+
+            #calc > input {
+                grid-area: input;
+                padding: 0.5rem;
+                text-align: right;
+                font-size: large;
+            }
+
+            #calc > button {
+                font-size: x-large;
+                border: none;
+                font-weight: bold;
+                padding: 0.5rem;
+            }
+
+            #calc > button:hover {
+                opacity: 0.9;
+            }
+
+            #reset {
+                grid-area: reset;
+                background-color: red;
+                color: white;
+            }
+
+            #clear {
+                grid-area: clear;
+                background-color: red;
+                color: white;
+            }
+
+            #equal {
+                background-color: orange;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="calc">
+            <input type="text" id="input" pattern="[0-9+\-/*]+" />
+            <button id="reset">RESET</button>
+            <button id="clear">CLEAR</button>
+            <button id="seven">7</button>
+            <button id="eight">8</button>
+            <button id="nine">9</button>
+            <button id="div">/</button>
+            <button id="four">4</button>
+            <button id="five">5</button>
+            <button id="six">6</button>
+            <button id="mul">*</button>
+            <button id="one">1</button>
+            <button id="two">2</button>
+            <button id="three">3</button>
+            <button id="sub">-</button>
+            <button id="dot">.</button>
+            <button id="zero">0</button>
+            <button id="equal">=</button>
+            <button id="plus">+</button>
+        </div>
+    </body>
+    <script>
+        const input = document.getElementById("input");
+        const reset = document.getElementById("reset");
+        const clear = document.getElementById("clear");
+        const equals = document.getElementById("equal");
+
+        const ids = [
+            "one",
+            "two",
+            "three",
+            "four",
+            "five",
+            "six",
+            "seven",
+            "eight",
+            "nine",
+            "zero",
+            "dot",
+            "plus",
+            "sub",
+            "mul",
+            "div",
+        ];
+
+        ids.forEach((value) => {
+            const button = document.getElementById(value);
+            button.addEventListener("click", () => {
+                input.value += button.innerText;
+            });
+        });
+
+        reset.addEventListener("click", () => {
+            input.value = "";
+        });
+
+        clear.addEventListener("click", () => {
+            let str = input.value;
+            str = str.slice(0, -1);
+            input.value = str;
+        });
+
+        equals.addEventListener("click", () => {
+            let res = eval(input.value);
+            input.value = res ?? "";
+        });
+    </script>
+</html>

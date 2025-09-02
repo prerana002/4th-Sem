@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id="js-demo"> original Text</div>
+    <button type="button" id="btn">change text</button> 
+    <script>
+        //selector
+        var btnEle=document.getElementById("btn");
+        let demoEle=document.getElementById("js-demo")
+        //check Dom element is retried or not console.log(btn Ele,demoEle);
+        btnEle.addEventListener ("click",function (){
+        demoEle.innerText= "change Text";
+        });
+        //comment:single line
+        /* comment"
+        multiline
+        */
+       /*Type of JS in usecase:
+       -INline JS event handler(Html Events)
+       -Internal JS (Embeded JS)
+       External JS
+       */
+      //Here we used internal
+    </script>
+    <!--External JS-->
+    <script src="/script.js"types="text/java script"></script>
+    <!--HTML events-->
+    <button type="button" onclick="alert('you clicked me!');">click me!</button>
+    <script>
+        /* javascript event:
+            -Keyboard event (onkeyup,onkeydown etc)
+            -Mouse event (onclick,onmousehover etc)
+            -Form event (onsubmit,onfocus etc)
+            -Window event (onload,onorientationchange etc.)
+        */
+     </script>
+     <noscript>
+        yours broweser doesn't support Javascript!
+        <a href="https://www.geeksforgeeks.org/javascript/how-to-enable-javascript-in-my-browser/"title="">Enable Javascript</a>
+     </noscript>
+     <script> 
+        /*Operator:
+        -Arithmetic
+        -Logical
+        -Assignment
+        -Bitwise
+        -Ternary
+        -Unary(Increament/Document)
+        etc.
+        */
+       /*variable making in JS
+       -var(Allow redeclare and redefine)
+       -let (Allow redefine, but no redeclare)
+       -const(Doesn't allow redeclare and redefine)
+       */
+      var a; //declare
+      a=10; //define
+      a=20; //redefine
+      var a; //redeclare
+
+      let b;
+      b=10;
+      b=5;
+      //let b; //not possible redeclaration
+      const c = 6; //because, it doesn't support redelare and redefine   
+      
+      //Arthemetic
+      let n1,n2,res;
+      n1=10;
+      n2=6;
+      res=n1 * n2;
+      alert(n1 + "+" + n2 + "=" + res); //old method concatenation with plus sign
+      alert(`${n1} + ${n2} = ${res}`); // > ES6, Template string with back tick
+
+      /* control Structure
+      #1 Conditional
+      -if,if-else,else-if-ladder
+      -switch case
+      -jump statement (goto)
+      
+      #2 looping
+      -loop (for,while,do-while) <in JS additional: forEach>
+        */
+       if(true){
+        console.log("condition is true.");
+     }else {
+        console.log("condition is false.");
+     }
+     //else-if-ladder
+     if(n1 == 5) console.log("Result: " + n1);
+     else if (n1 == 10) console.log("Result: " + n1);
+     else if (n1 == 20) console.log("Result: " + n1);
+     else console.log ("No result.");
+     </script>
+</body>
+</html>
+    
+</body>
+</html>

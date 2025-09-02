@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>*</title>
+</head>
+<body>
+    <pre id="result"></pre>
+    <script> 
+        let output = "";
+
+        for (let i = 1; i <= 5; i++) {
+           
+            for (let j = 1; j <= 5 - i; j++) {
+                output += " ";
+            }
+            for (let k = 1; k <= i; k++) {
+                output += "*";
+            }
+            output += "\n";
+        }
+
+        document.getElementById("result").textContent = output;
+    </script>
+</body>
+</html>

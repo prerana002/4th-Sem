@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital  clock</title>
+</head>
+<body>
+    <div id="clock"></div>
+    <script type="text/javascript">
+        let date=new Date();//date object
+        //Dates collection
+        let year=date.getFullYear(),
+            month=date.getMonth(),//0 to 11
+            mDay=date.getDate(),
+            day=date.getDay(),
+            hour=date.getHours(),
+            minute=date.getMinutes(),
+            second=date.getSeconds();
+
+            console.log(year, month, day);
+
+            let clock=`Today:${year}-${month+1}-${mDay},${hour}:${minute}:${second},${day+1}`;
+           // document.writeln(clock);
+           let clockBox=document.getElementById("clock");
+           clockBox.innerText=clock;
+
+           //Standard Diital clock
+           let monthArr=["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"];
+           let dayArr=["sunday","monday","tuesdaY","wednesday","thursday","friday","saturday"];
+
+           let clock2=`Today:${mDay}<sup>th</sup>${monthArr[month]}${year}${hour}:${minute}:${second}`;
+
+           let clockSpan=document.createElement("span");
+           clockSpan.classList.add("myClock");
+           clockBox.append(clockSpan);
+
+           console.log(clockBox.childNodes[1]);
+           clockBox.childNodes[1].innerHTML= "<hr>" + clock2;
+    
+    </script>
+</body>
+</html>
