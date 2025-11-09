@@ -7,5 +7,5 @@ for _ in range(n):
 search_item = input("What do you want to search: ").lower()
 for index, fruit in enumerate(items):
     if fruit == search_item:
-        print(f"'{fruit}' is in {index+1} position")
+        print(f"'{fruit}' is in {index} position")
         break
